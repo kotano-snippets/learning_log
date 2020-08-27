@@ -1,0 +1,12 @@
+django
+django-bootstrap4
+django-heroku
+bs4
+dj-database-url
+# dj-static
+# static3
+gunicorn
+psycopg2
+pytz
+sqlparse
+whitenoise
