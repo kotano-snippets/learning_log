@@ -64,7 +64,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,8 +141,9 @@ BOOTSTRAP4 = {
 # Heroku settings.
 django_heroku.settings(locals())
 
-if os.environ.get('DEBUG') == 'TRUE':
+debugvariable = os.environ.get('DEBUG', '').upper()
+if debugvariable == 'TRUE':
     DEBUG = True
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-elif os.environ.get('DEBUG') == 'FALSE':
+elif debugvariable == 'FALSE':
     DEBUG = False
