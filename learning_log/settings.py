@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2f5m0w5pba5)a%41=$$vl8imtipno#i63flunj8f5)6vm+v0z2'  # 6
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.3']
+    ALLOWED_HOSTS = ['kotano-ll.herokuapp.com']
     # INTERNAL_IPS = glob_list(['127.0.0.1', '192.168.*.*'])
 
 
@@ -143,5 +143,6 @@ django_heroku.settings(locals())
 
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
